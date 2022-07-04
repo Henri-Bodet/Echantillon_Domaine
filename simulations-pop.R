@@ -1,6 +1,6 @@
-N <- 100
+N <- 1000
 n <- 80
-M <- 60
+M <- 6
 
 pop <- 1:N
 D <- rep(0,N)
@@ -37,3 +37,5 @@ IC <-( (estims_simul[1] - 1.6*sqrt(estims_simul[2])) < simulations) &
 table(IC)
 mean(IC)
 estims_simul[1] + 2*sqrt(estims_simul[2])
+
+saveRDS(simulations,file=paste0("simulations_",N,"_",M,"_",n,".RDS"))
